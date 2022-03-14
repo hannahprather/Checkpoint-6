@@ -9,6 +9,18 @@
       container-fluid
     "
   >
+    <!-- SEARCH BAR -->
+    <div class="row justify-content-center pt-4">
+      <div class="col-md-6">
+        <input
+          form-control
+          type="text"
+          placeholder="Search..."
+          class="shadow"
+          v-model="state.query.name"
+        />
+      </div>
+    </div>
     <div class="row p-3 m-2">
       <div v-for="p in posts" :key="p.id" class="py-3">
         <Post :post="p" />
@@ -28,7 +40,7 @@
 </template>
 
 <script>
-import { computed, onMounted } from "@vue/runtime-core";
+import { computed, onMounted, reactive } from "@vue/runtime-core";
 import Pop from "../utils/Pop";
 import { AppState } from "../AppState";
 import { logger } from "../utils/Logger";
@@ -37,6 +49,11 @@ import { postsService } from "../services/PostsService";
 export default {
   name: "Home",
   setup() {
+    const state = reactive({
+      query: {
+        name: "",
+      },
+    });
     onMounted(async () => {
       try {
         await postsService.getAll();
@@ -46,11 +63,17 @@ export default {
       }
     });
     return {
-      posts: computed(() => AppState.posts),
+      state,
+      posts: computed(() =>
+        AppState.posts.filter((p) =>
+          p.body.toLowerCase().includes(state.query.name.toLowerCase())
+        )
+      ),
       async getOldPage() {
         try {
           await postsService.getOldPage();
         } catch (error) {
+          3;
           Pop.toast("thats it folks!", "error", error);
         }
       },

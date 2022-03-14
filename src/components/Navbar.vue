@@ -2,10 +2,10 @@
   <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-success px-3">
     <router-link class="navbar-brand d-flex" :to="{ name: 'Home' }">
       <div class="d-flex flex-column align-items-center">
+        THE NETWORK
         <img alt="" src="" height="45" />
       </div>
     </router-link>
-    <div class="text-large text-light">THE NETWORK</div>
     <button
       class="navbar-toggler"
       type="button"
