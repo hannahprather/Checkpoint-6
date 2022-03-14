@@ -26,13 +26,13 @@
       >
         delete
       </button>
-      <button
+      <!-- <button
         v-if="post.creatorId === loggedInUser.id"
         class="btn-secondary"
         @click="isEditing = !isEditing"
       >
         edit
-      </button>
+      </button> -->
 
       <button @click="likePost(post.id)">Like</button>
     </div>

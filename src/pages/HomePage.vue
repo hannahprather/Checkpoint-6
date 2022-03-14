@@ -27,16 +27,14 @@
       </div>
     </div>
   </div>
-  <div>
-    <button
-      :disabled="currentPage === 1"
-      @click="getNewPage()"
-      class="btn btn-secondary"
-    >
-      previous
-    </button>
-    <button @click="getOldPage()" class="btn btn-secondary">next</button>
-  </div>
+  <button
+    :disabled="currentPage === 1"
+    @click="getNewPage()"
+    class="btn btn-secondary"
+  >
+    previous
+  </button>
+  <button @click="getOldPage()" class="btn btn-secondary">next</button>
 </template>
 
 <script>

@@ -22,9 +22,6 @@
       />
     </div>
     <div class="modal-footer">
-      <button type="button" class="btn btn-secondary" data-dismiss="modal">
-        Close
-      </button>
       <button type="submit" class="btn btn-primary">Create Post</button>
     </div>
   </form>
@@ -33,19 +30,12 @@
     <div class="col-8 offset-2 my-2">
       <input
         type="text"
-        placeholder="edit email"
-        class="form-control"
-        v-model="account.email"
-      />
-      <input
-        type="text"
         placeholder="name"
         class="form-control"
         v-model="account.name"
       />
     </div>
     <div class="">
-      <button type="button" class="btn btn-secondary">Close</button>
       <button type="submit" class="btn btn-primary">edit profile</button>
     </div>
   </form>

@@ -6,7 +6,8 @@
       </div>
       <!-- <p>{{ activeProfile.name }}</p> -->
       <p>{{ activeProfile.bio }}</p>
-      <!-- <p>{{ activePro}}</p> -->
+      <p>{{ activeProfile }}</p>
+      <!-- <img ;src="activeProfile.backgroundpicture" alt="bg-pic" /> -->
     </div>
     <Post v-for="p in posts" :key="p.id" :post="p" />
     <div>
