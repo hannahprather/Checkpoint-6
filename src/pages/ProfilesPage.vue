@@ -1,26 +1,30 @@
 <template>
   <div class="container-fluid">
-    <div class="col-10">
-      <img :src="activeProfile.picture" alt="profile pic" />
+    <div class="row">
+      <div class="col-8 justify-content-end">
+        <img :src="activeProfile.picture" alt="profile pic" />
+      </div>
+      <!-- <p>{{ activeProfile.name }}</p> -->
+      <p>{{ activeProfile.bio }}</p>
+      <!-- <p>{{ activePro}}</p> -->
     </div>
-    <p>{{ activeProfile.bio }}</p>
-  </div>
-  <Post v-for="p in posts" :key="p.id" :post="p" />
-  <div>
+    <Post v-for="p in posts" :key="p.id" :post="p" />
     <div>
-      <button
-        :disabled="currentPage === 1"
-        @click="getNewPage()"
-        class="btn btn-secondary"
-      >
-        previous
-      </button>
-      <button
-        @click="getOldPage(activeProfile.creatorId)"
-        class="btn btn-secondary"
-      >
-        next
-      </button>
+      <div>
+        <button
+          :disabled="currentPage === 1"
+          @click="getNewPage()"
+          class="btn btn-secondary"
+        >
+          previous
+        </button>
+        <button
+          @click="getOldPage(activeProfile.creatorId)"
+          class="btn btn-secondary"
+        >
+          next
+        </button>
+      </div>
     </div>
   </div>
 </template>

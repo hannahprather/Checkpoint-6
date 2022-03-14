@@ -13,5 +13,6 @@ export const AppState = reactive({
   },
   currentPage: 1,
   likes: [],
-  postsData: {}
+  postsData: {},
+  bilboard: []
 })

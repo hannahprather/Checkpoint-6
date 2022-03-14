@@ -10,7 +10,11 @@ class ProfilesService {
     logger.log('[profiles]', res)
     AppState.activeProfile = res.data
   }
+  async editAccount(accountData) {
+    const res = await api.put('/account', accountData)
+    AppState.account = res.data
 
+  }
 }
 
 
